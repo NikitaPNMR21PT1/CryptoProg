@@ -35,7 +35,7 @@ int main() {
         cout << "Enter input file(or enter default): ";
         cin >> input_file_string;
         if(input_file_string == "default")
-            input_file_string = "/home/stud/CryptoProg/cipher/test";
+            input_file_string = "/home/stud/CryptoProg/cipher/testing";
         ifstream input_check(input_file_string);
         if(input_check.is_open() == 0) {
             cerr << "Invalid input file\n";
@@ -89,7 +89,7 @@ int main() {
     else if (mode == "decrypt") {
         string user_pass;
         FileSource("/home/stud/CryptoProg/cipher/user_password_file", true, new StringSink(user_pass));
-        if (pass == user_pass) {
+        if (pass != user_pass) {
             cout << "Invalid password\n";
             return 1;
         }
