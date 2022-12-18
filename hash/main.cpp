@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
     string gsm, msg, result, result1;
-    FileSource("/home/stud/CryptoProg/hash/test", true, new StringSink(msg));
+    FileSource("/home/stud/CryptoProg/hash/testing", true, new StringSink(msg));
     msg.resize(msg.size() - 1);
     cout << "Text from file: " << msg << endl;
     HexEncoder encoder(new StringSink(result));
@@ -23,7 +23,7 @@ int main() {
     
     // Блок для проверки работоспособности кода выше:
     HexEncoder encoder1(new StringSink(result1));
-    string gsm1, msg1 = "My name is Alexander";
+    string gsm1, msg1 = "My full name is Nikita Ponomarev";
     cout << "Text: " << msg1 << endl;
     hash.Update((const byte*)&msg1[0], msg1.size());
     gsm1.resize(hash.DigestSize());
